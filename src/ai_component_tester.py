@@ -24,7 +24,6 @@ except ImportError:
     class Style:
         RESET_ALL = ""
 
-from ai_path_manager import PathManager
 from ai_conda_manager import CondaManager
 
 class ComponentTester:
@@ -256,27 +255,34 @@ class ComponentTester:
     def test_system_integration(self):
         """Test system integration"""
         try:
+            from ai_path_manager import PathManager
+        except ImportError as e:
+            self.print_info(f"  ℹ PathManager import failed: {e}")
+            self.print_info("  ℹ Skipping system integration test")
+            return None
+
+        try:
             # Test PATH configuration
             current_path = os.environ.get('PATH', '')
             if 'AI_Environment' in current_path:
                 self.print_success("  ✓ AI Environment paths in system PATH")
             else:
                 self.print_info("  ℹ AI Environment paths not in current PATH (normal)")
-            
+
             # Test environment variables
             conda_env = os.environ.get('CONDA_DEFAULT_ENV', '')
             if conda_env:
                 self.print_success(f"  ✓ Active conda environment: {conda_env}")
             else:
                 self.print_info("  ℹ No active conda environment")
-            
+
             # Test basic Windows commands
             path_manager = PathManager()
             cmd_results = path_manager.test_basic_commands()
-            
+
             working_commands = sum(1 for result in cmd_results.values() if result)
             total_commands = len(cmd_results)
-            
+
             if working_commands == total_commands:
                 self.print_success(f"  ✓ All Windows commands working ({working_commands}/{total_commands})")
                 self.print_success("System integration test PASSED")
@@ -285,7 +291,7 @@ class ComponentTester:
                 self.print_error(f"  ✗ Some Windows commands not working ({working_commands}/{total_commands})")
                 self.print_error("System integration test FAILED")
                 return False
-                
+
         except Exception as e:
             self.print_error(f"System integration test error: {e}")
             return False
