@@ -1,0 +1,130 @@
+{
+  "validation_info": {
+    "version": "2.1.0",
+    "date": "2025-08-11",
+    "description": "Fixed for Conda Environment",
+    "timestamp": "2025-08-11T00:28:22.719011",
+    "total_time": 79.66613173484802
+  },
+  "summary": {
+    "overall_status": "FAILED",
+    "total_tests": 10,
+    "passed": 7,
+    "warnings": 2,
+    "failed": 0,
+    "errors": 1
+  },
+  "results": {
+    "System Requirements": {
+      "status": "PASS",
+      "message": "System requirements check completed",
+      "details": [
+        "Operating System: Windows-10-10.0.26100-SP0",
+        "Available disk space: 911.2 GB",
+        "Total RAM: 31.8 GB"
+      ]
+    },
+    "Directory Structure": {
+      "status": "PASS",
+      "message": "Directory structure validation completed",
+      "details": [
+        "✅ AI_Environment: Found",
+        "✅ Miniconda: Found",
+        "✅ AI2025: Found",
+        "✅ VSCode: Found",
+        "✅ Ollama: Found",
+        "✅ Models: Found",
+        "✅ Projects: Found"
+      ]
+    },
+    "Python Installation": {
+      "status": "PASS",
+      "message": "Python installation validation completed",
+      "details": [
+        "✅ Miniconda installation found",
+        "✅ Conda executable found",
+        "✅ Python executable found in conda environment",
+        "✅ Pip executable found in conda environment",
+        "Python version: Python 3.10.18",
+        "Conda version: conda 25.5.1"
+      ]
+    },
+    "Conda Environment": {
+      "status": "PASS",
+      "message": "Conda environment validation completed",
+      "details": [
+        "✅ Conda environment directory found",
+        "✅ Conda environment Python found",
+        "✅ Conda executable found",
+        "Conda environment Python: Python 3.10.18"
+      ]
+    },
+    "Python Packages": {
+      "status": "ERROR",
+      "message": "Package validation failed: Command '['D:\\\\AI_Environment\\\\Miniconda\\\\envs\\\\AI2025\\\\python.exe', '-c', \"import transformers; print('transformers OK')\"]' timed out after 30 seconds",
+      "details": [
+        "✅ numpy: Available",
+        "✅ pandas: Available",
+        "✅ matplotlib: Available",
+        "✅ requests: Available",
+        "❌ flask: Missing or broken",
+        "✅ streamlit: Available",
+        "✅ langchain: Available",
+        "✅ openai: Available"
+      ]
+    },
+    "VS Code Installation": {
+      "status": "PASS",
+      "message": "VS Code validation completed",
+      "details": [
+        "✅ VS Code executable found",
+        "✅ VS Code data directory found (portable mode)",
+        "VS Code version: [main 2025-08-10T21:28:11.650Z] update#setState disabled",
+        "Extensions installed: 1"
+      ]
+    },
+    "Ollama Installation": {
+      "status": "WARN",
+      "message": "Ollama validation completed",
+      "details": [
+        "✅ Ollama executable found",
+        "Ollama version: Error: unknown command \"version\" for \"ollama\"",
+        "⚠️  Ollama service not running (this is normal)"
+      ]
+    },
+    "LLM Models": {
+      "status": "WARN",
+      "message": "LLM models validation completed",
+      "details": [
+        "✅ Models directory found",
+        "Model files found: 0",
+        "⚠️  No model files found",
+        "Total models size: 0.0 GB",
+        "ℹ️  Ollama service not running - cannot check registered models"
+      ]
+    },
+    "Integration Tests": {
+      "status": "PASS",
+      "message": "Integration tests completed",
+      "details": [
+        "✅ Python packages integration: OK",
+        "  • All critical packages imported successfully",
+        "  • Integration test completed successfully",
+        "  • Integration test completed successfully",
+        "Project templates found: 1",
+        "  ✅ 01_Basic_LLM_Example: main.py found",
+        "✅ Environment activation script found"
+      ]
+    },
+    "Performance Tests": {
+      "status": "PASS",
+      "message": "Performance tests completed",
+      "details": [
+        "Python startup time: 0.06 seconds",
+        "Package import time: 2.70 seconds",
+        "Disk write speed: 65.9 MB/s",
+        "Disk read speed: 731.1 MB/s"
+      ]
+    }
+  }
+}

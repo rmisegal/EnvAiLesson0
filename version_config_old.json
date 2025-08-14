@@ -1,0 +1,535 @@
+{
+  "metadata": {
+    "version": "3.0.16",
+    "last_updated": "2025-08-13",
+    "description": "Version configuration for AI Environment Python System files"
+  },
+  "expected_versions": {
+    "batch_files": {
+      "run_ai_env.bat": {
+        "version": "3.0.16",
+        "search_pattern": "AI Environment Python Launcher v3.0.16",
+        "description": "Main launcher script"
+      },
+      "setup_python_env.bat": {
+        "version": "3.0.16",
+        "search_pattern": "Setup Python Environment for AI Environment Manager v3.0.16",
+        "description": "Python environment setup script"
+      },
+      "check_versions.bat": {
+        "version": "3.0.16",
+        "search_pattern": "AI Environment Version Checker v3.0.16",
+        "description": "Version checking script"
+      }
+    },
+    "python_files": {
+      "src/ai_path_manager.py": {
+        "version": "3.0.0",
+        "search_pattern": "AI Environment Module v3.0.0",
+        "description": "PATH management module"
+      },
+      "src/ai_conda_manager.py": {
+        "version": "3.0.0",
+        "search_pattern": "AI Environment Module v3.0.0", 
+        "description": "Conda management module"
+      },
+      "src/ai_component_setup.py": {
+        "version": "3.0.0",
+        "search_pattern": "AI Environment Module v3.0.0",
+        "description": "Component setup module"
+      },
+      "src/ai_ollama_manager.py": {
+        "version": "3.0.0",
+        "search_pattern": "AI Environment Module v3.0.0",
+        "description": "Ollama server management module"
+      },
+      "src/ai_process_manager.py": {
+        "version": "3.0.15",
+        "search_pattern": "AI Environment Module v3.0.15",
+        "description": "Background process manager with enhanced VS Code integration"
+      },
+      "src/ai_app_launcher.py": {
+        "version": "3.0.15",
+        "search_pattern": "AI Environment Module v3.0.15",
+        "description": "Application launcher with VS Code AI2025 interpreter setup"
+      },
+      "src/ai_status_display.py": {
+        "version": "3.0.0",
+        "search_pattern": "AI Environment Module v3.0.0",
+        "description": "Status display module"
+      },
+      "src/ai_component_tester.py": {
+        "version": "3.0.15",
+        "search_pattern": "AI Environment Module v3.0.15",
+        "description": "Component testing module with comprehensive tests for new model management and Jupyter Lab systems"
+      },
+      "src/ai_menu_system.py": {
+        "version": "3.0.0",
+        "search_pattern": "AI Environment Module v3.0.0",
+        "description": "Interactive menu system module"
+      },
+      "src/ai_action_handlers.py": {
+        "version": "3.0.14",
+        "search_pattern": "AI Environment Module v3.0.14",
+        "description": "Action handlers module with comprehensive AI model management integration"
+      },
+      "src/ai_jupyter_manager.py": {
+        "version": "3.0.13",
+        "search_pattern": "Version: 3.0.13",
+        "description": "Jupyter Lab management module with improved server startup logic and error handling"
+      },
+      "src/activate_ai_env.py": {
+        "version": "3.0.8",
+        "search_pattern": "AI Environment Activation Program - Main Entry Point v3.0.8",
+        "description": "Main activation script with dynamic version display"
+      },
+      "src/check_versions.py": {
+        "version": "3.0.8",
+        "search_pattern": "AI Environment Version Checker v3.0.8",
+        "description": "Version checker with dynamic highest version display"
+      },
+      "src/verify_checksums.py": {
+        "version": "3.0.1",
+        "search_pattern": "SCRIPT_VERSION = \"3.0.1\"",
+        "description": "File integrity verification using SHA256 checksums (internal module)"
+      }
+    },
+    "documentation_files": {
+      "README.md": {
+        "version": "3.0.0",
+        "search_pattern": "Version 3.0.0",
+        "description": "Complete documentation in Hebrew"
+      },
+      "PACKAGE_INFO.txt": {
+        "version": "3.0.1",
+        "search_pattern": "AI Environment Python System v3.0.1",
+        "description": "Package contents and information"
+      }
+    }
+  },
+  "version_history": [
+    {
+      "version": "3.0.13",
+      "date": "2025-08-13",
+      "changes": [
+        "Fixed Jupyter Lab server startup logic and detection issues",
+        "Improved error handling and debugging information in start_server_only method",
+        "Added conda path validation before attempting to start server",
+        "Enhanced error messages with detailed output from failed server starts",
+        "Fixed duplicate exception handlers in server startup code",
+        "Added better timeout handling for process communication",
+        "Improved server detection logic to properly handle already running servers"
+      ],
+      "files_changed": [
+        "src/ai_jupyter_manager.py", 
+        "version_config.json"
+      ]
+    },
+    {
+      "version": "3.0.12",
+      "date": "2025-08-13",
+      "changes": [
+        "Fixed terminal hanging issue after Jupyter Lab server shutdown",
+        "Added proper stdin handling to subprocess calls in _kill_processes_on_port",
+        "Added input buffer flushing after stop_server operation",
+        "Fixed subprocess interference with parent process input stream",
+        "Added capture_output=True and stdin=subprocess.DEVNULL to all subprocess calls",
+        "Added small delay and buffer flush to ensure clean terminal state",
+        "Improved error handling for subprocess.CalledProcessError in process termination"
+      ],
+      "files_changed": [
+        "src/ai_action_handlers.py", 
+        "src/ai_jupyter_manager.py", 
+        "version_config.json"
+      ]
+    },
+    {
+      "version": "3.0.11",
+      "date": "2025-08-13",
+      "changes": [
+        "Fixed UnboundLocalError in ai_action_handlers.py handle_launch_menu method",
+        "Fixed Jupyter Lab option 3 (Start Server + Client) with improved timing and error handling",
+        "Fixed Jupyter Lab option 6 (Stop Server) with better process termination and graceful shutdown",
+        "Added Projects directory targeting - server opens in D:\\AI_Environment\\Projects\\01_Basic_LLM_Example",
+        "Enhanced background process management for Jupyter Lab server",
+        "Improved server startup verification with timeout and status checking",
+        "Added better error messages and user feedback for Jupyter Lab operations",
+        "Enhanced graceful shutdown with requests API and fallback to process termination"
+      ],
+      "files_changed": [
+        "src/ai_action_handlers.py", 
+        "src/ai_jupyter_manager.py", 
+        "version_config.json"
+      ]
+    },
+    {
+      "version": "3.0.9",
+      "date": "2025-08-12",
+      "changes": [
+        "Fixed BackgroundProcessManager method call error",
+        "Changed list_processes() to list_background_processes() in ai_action_handlers.py",
+        "Fixed AttributeError when accessing background process management menu",
+        "Improved background process management functionality"
+      ],
+      "files_changed": ["src/ai_action_handlers.py", "version_config.json"]
+    },
+    {
+      "version": "3.0.8",
+      "date": "2025-08-12",
+      "changes": [
+        "Fixed version display to show highest system version dynamically",
+        "Added current time to date display in AI Environment Manager header",
+        "Updated activate_ai_env.py to dynamically determine highest version from JSON",
+        "Updated check_versions.py to show correct highest system version",
+        "Improved version consistency across all components",
+        "Enhanced user experience with accurate version information"
+      ],
+      "files_changed": ["src/activate_ai_env.py", "src/check_versions.py", "version_config.json"]
+    },
+    {
+      "version": "3.0.7",
+      "date": "2025-08-12",
+      "changes": [
+        "Fixed directory structure test - made AI_Installer and AI_Environment_Python optional",
+        "Fixed pandas timeout issue - increased timeout from 5 to 15 seconds",
+        "Improved Ollama version check with fallback to --help command",
+        "Added better error reporting for Ollama test failures",
+        "Enhanced component testing reliability and user experience"
+      ],
+      "files_changed": ["src/ai_component_tester.py", "version_config.json"]
+    },
+    {
+      "version": "3.0.6",
+      "date": "2025-08-12",
+      "changes": [
+        "Fixed ImportError: cannot import name 'ProcessManager' from 'ai_process_manager'",
+        "Corrected import statement to use 'BackgroundProcessManager' instead of 'ProcessManager'",
+        "Updated all references from ProcessManager() to BackgroundProcessManager(self.ai_env_path)",
+        "Fixed runtime error in background process management functionality",
+        "Ensured proper class name consistency and parameter passing"
+      ],
+      "files_changed": ["src/ai_action_handlers.py", "version_config.json"]
+    },
+    {
+      "version": "3.0.5",
+      "date": "2025-08-12",
+      "changes": [
+        "Fixed ImportError: cannot import name 'AppLauncher' from 'ai_app_launcher'",
+        "Corrected import statement to use 'ApplicationLauncher' instead of 'AppLauncher'",
+        "Updated all references from AppLauncher to ApplicationLauncher in ai_action_handlers.py",
+        "Fixed runtime error that prevented AI Environment from starting",
+        "Ensured proper class name consistency across modules"
+      ],
+      "files_changed": ["src/ai_action_handlers.py", "version_config.json"]
+    },
+    {
+      "version": "3.0.4",
+      "date": "2025-08-12",
+      "changes": [
+        "Fixed direct Python execution guidance in check_versions.py",
+        "Added warning when running check_versions.py directly instead of via .bat",
+        "Updated version display to show highest system version from configuration",
+        "Added function to extract and display highest version number",
+        "Improved user guidance for proper launch methods",
+        "Enhanced version reporting with both script and system versions"
+      ],
+      "files_changed": ["src/check_versions.py", "version_config.json"]
+    },
+    {
+      "version": "3.0.3",
+      "date": "2025-08-12",
+      "changes": [
+        "Reorganized file structure: moved all Python files to src/ directory",
+        "Root directory now contains only Windows batch files for user interaction",
+        "Moved check_versions.py and verify_checksums.py to src/ as internal modules",
+        "Updated check_versions.bat to be a simple wrapper calling src/check_versions.py",
+        "Improved file organization following Windows/Python separation principle",
+        "Updated all file paths and references in configuration"
+      ],
+      "files_changed": ["check_versions.bat", "check_versions.py", "verify_checksums.py", "version_config.json"]
+    },
+    {
+      "version": "3.0.2",
+      "date": "2025-08-12",
+      "changes": [
+        "Added environment check in activate_ai_env.py to detect incorrect launch method",
+        "Script now warns users when run directly outside conda AI2025 environment",
+        "Added clear guidance to use run_ai_env.bat instead of direct Python execution",
+        "Improved user experience with proper launch method instructions",
+        "Added option to continue with limited functionality if user insists",
+        "Moved activate_ai_env.py to src/ directory as internal module",
+        "Updated run_ai_env.bat to reference src/activate_ai_env.py",
+        "Improved file organization - only user-facing files in root directory"
+      ],
+      "files_changed": ["activate_ai_env.py", "run_ai_env.bat", "version_config.json"]
+    },
+    {
+      "version": "3.0.1",
+      "date": "2025-08-12",
+      "changes": [
+        "Fixed circular checksum dependency issue in verify_checksums.py",
+        "CHECKSUMS.sha256 no longer includes its own checksum to prevent infinite loop",
+        "Updated verify_checksums.py to focus only on AI Environment files",
+        "Improved checksum verification to ignore system installations (VS Code, Miniconda)",
+        "Updated PACKAGE_INFO.txt with corrected version information"
+      ],
+      "files_changed": ["verify_checksums.py", "PACKAGE_INFO.txt", "version_config.json"]
+    },
+    {
+      "version": "3.0.0",
+      "date": "2025-08-12",
+      "changes": [
+        "Major version update: All files updated to version 3.0.0",
+        "Unified version numbering across all components",
+        "Complete system refresh with consistent versioning",
+        "All modules, scripts, and configuration files synchronized"
+      ],
+      "files_changed": ["All files updated to v3.0.0"]
+    },
+    {
+      "version": "2.2.0",
+      "date": "2025-08-11",
+      "changes": [
+        "Updated configuration to use original filenames as preferred by user",
+        "check_versions.bat now contains the dynamic version checker functionality",
+        "activate_ai_env.py now contains the refactored modular code",
+        "Simplified file structure while maintaining all functionality"
+      ],
+      "files_changed": ["version_config.json", "check_versions.bat", "activate_ai_env.py"]
+    },
+    {
+      "version": "3.0.0",
+      "date": "2025-08-11",
+      "changes": [
+        "Fixed Python syntax error in dynamic version checker",
+        "Corrected f-string parentheses mismatch in temp_json_parser.py generation",
+        "Fixed missing closing quotes in description field parsing"
+      ],
+      "files_changed": ["check_versions_dynamic.bat"]
+    },
+    {
+      "version": "3.0.0",
+      "date": "2025-08-11",
+      "changes": [
+        "Created dynamic version checker that reads all files from JSON configuration",
+        "Fixed hardcoded file list issue in check_versions.bat",
+        "Added Python-based JSON parsing for accurate file detection",
+        "Now checks all files defined in version_config.json automatically"
+      ],
+      "files_changed": ["check_versions_dynamic.bat"]
+    },
+    {
+      "version": "3.0.0",
+      "date": "2025-08-11",
+      "changes": [
+        "Major refactoring: Split large activate_ai_env.py into focused modules",
+        "Created ai_component_tester.py for comprehensive testing functionality",
+        "Created ai_menu_system.py for interactive menu interfaces",
+        "Created ai_action_handlers.py for all menu actions and operations",
+        "Created activate_ai_env_refactored.py as new streamlined main entry point",
+        "Improved code organization and maintainability"
+      ],
+      "files_changed": ["activate_ai_env_refactored.py", "src/ai_component_tester.py", "src/ai_menu_system.py", "src/ai_action_handlers.py"]
+    },
+    {
+      "version": "3.0.0",
+      "date": "2025-08-11",
+      "changes": [
+        "Implemented comprehensive Test All Components functionality",
+        "Added 6 comprehensive tests: directory structure, conda, AI2025 env, packages, Ollama, system integration",
+        "Added detailed test results with pass/fail counts and success rate",
+        "Added support for optional components (Ollama)",
+        "Enhanced error reporting and debugging information"
+      ],
+      "files_changed": ["activate_ai_env.py"]
+    },
+    {
+      "version": "3.0.0",
+      "date": "2025-08-11",
+      "changes": [
+        "Fixed Python path verification logic with better string matching",
+        "Added multiple path pattern support (forward/backward slashes)",
+        "Enhanced path normalization for Windows compatibility",
+        "Added debug information for path verification failures"
+      ],
+      "files_changed": ["src/ai_conda_manager.py", "activate_ai_env.py"]
+    },
+    {
+      "version": "3.0.0",
+      "date": "2025-08-11",
+      "changes": [
+        "Fixed Full Activation process order - conda first, then path cleanup",
+        "Improved PATH manager to preserve essential Windows commands",
+        "Enhanced Python location verification with fallback methods",
+        "Fixed command testing in PATH manager"
+      ],
+      "files_changed": ["src/ai_action_handlers.py", "src/ai_path_manager.py"]
+    }
+  ],
+  "python_files": {
+    "src": {
+      "src/ai_action_handlers.py": {
+        "version": "3.0.16",
+        "search_pattern": "AI Environment Module v3.0.16",
+        "description": "Action handlers with enhanced model management"
+      },
+      "src/ai_component_tester.py": {
+        "version": "3.0.16",
+        "search_pattern": "AI Environment Module v3.0.16",
+        "description": "Component tester with 9 comprehensive tests"
+      },
+      "src/ai_process_manager.py": {
+        "version": "3.0.16",
+        "search_pattern": "AI Environment Module v3.0.16",
+        "description": "Background process manager with enhanced VS Code integration"
+      },
+      "src/ai_app_launcher.py": {
+        "version": "3.0.16",
+        "search_pattern": "AI Environment Module v3.0.16",
+        "description": "Application launcher with VS Code AI2025 interpreter setup"
+      },
+      "src/ai_model_loader.py": {
+        "version": "3.0.16",
+        "search_pattern": "AI Environment Module v3.0.16",
+        "description": "Model loader with Unicode fixes and extended timeout"
+      },
+      "help/llama2_7b.txt": {
+        "version": "3.0.14",
+        "search_pattern": "Version: 3.0.14",
+        "description": "Llama2 7B model help and documentation"
+      },
+      "help/mistral_7b.txt": {
+        "version": "3.0.14",
+        "search_pattern": "Version: 3.0.14",
+        "description": "Mistral 7B model help and documentation"
+      },
+      "help/codellama_7b.txt": {
+        "version": "3.0.14",
+        "search_pattern": "Version: 3.0.14",
+        "description": "CodeLlama 7B model help and documentation"
+      },
+      "help/gpt_oss_20b.txt": {
+        "version": "3.0.14",
+        "search_pattern": "Version: 3.0.14",
+        "description": "GPT-OSS 20B model help and documentation"
+      }
+    }
+  },
+  "version_history": [
+    {
+      "version": "3.0.0",
+      "date": "2025-08-12",
+      "changes": [
+        "Initial release of AI Environment Python System",
+        "Complete portable AI development environment",
+        "Integrated Conda, Ollama, and Jupyter Lab",
+        "Automated setup and activation scripts"
+      ],
+      "files_changed": ["All files"]
+    },
+    {
+      "version": "3.0.1",
+      "date": "2025-08-12",
+      "changes": [
+        "Fixed circular checksum issue in CHECKSUMS.sha256",
+        "Improved checksum verifier to focus on AI Environment files only",
+        "Updated version tracking and documentation"
+      ],
+      "files_changed": ["verify_checksums.py", "PACKAGE_INFO.txt", "version_config.json"]
+    },
+    {
+      "version": "3.0.2",
+      "date": "2025-08-12",
+      "changes": [
+        "Added proper verbose mode support",
+        "Fixed Windows path compatibility"
+      ],
+      "files_changed": ["run_ai_env.bat", "setup_python_env.bat", "activate_ai_env.py"]
+    },
+    {
+      "version": "3.0.11",
+      "date": "2025-08-13",
+      "changes": [
+        "Fixed Jupyter Lab option 3 (Start Server + Client) - server now runs in background",
+        "Fixed Jupyter Lab option 6 (Stop Server) - improved process termination with fallback",
+        "Added Projects directory targeting - server opens in D:\\AI_Environment\\Projects\\01_Basic_LLM_Example",
+        "Enhanced background process management for Jupyter Lab server",
+        "Improved error handling and graceful shutdown mechanisms"
+      ]
+    },
+    {
+      "version": "3.0.14",
+      "date": "2025-08-13",
+      "changes": [
+        "Implemented comprehensive AI model management system",
+        "Added model download, load, status, delete, and help functions",
+        "Created detailed help files for all popular AI models (Phi, Llama2, Mistral, CodeLlama, GPT-OSS)",
+        "Integrated model selection into Full Activation with phi:2.7b as default",
+        "Added models/ directory with complete documentation and usage examples",
+        "Enhanced action handlers with full model management integration",
+        "Added official download links and Python usage examples for all models"
+      ],
+      "files_changed": [
+        "src/ai_action_handlers.py",
+        "src/ai_model_manager.py",
+        "src/ai_model_downloader.py", 
+        "src/ai_model_loader.py",
+        "models/phi_2_7b.txt",
+        "models/llama2_7b.txt",
+        "models/mistral_7b.txt",
+        "models/codellama_7b.txt",
+        "models/gpt_oss_20b.txt",
+        "version_config.json",
+        "PACKAGE_INFO.txt",
+        "README.md"
+      ]
+    },
+    {
+      "version": "3.0.15",
+      "date": "2025-08-13",
+      "changes": [
+        "Fixed folder name from models/ to help/ for better organization",
+        "Fixed Unicode encoding issues in model loading (UnicodeDecodeError)",
+        "Extended timeout for large models from 2 to 5 minutes",
+        "Added proper encoding='utf-8' and errors='replace' to all subprocess calls",
+        "Improved error messages for large model loading failures",
+        "Updated all references from models_help_path to help_path"
+      ],
+      "files_changed": [
+        "src/ai_action_handlers.py",
+        "src/ai_model_loader.py",
+        "help/ (renamed from models/)",
+        "version_config.json",
+        "PACKAGE_INFO.txt",
+        "README.md"
+      ]
+    },
+    {
+      "version": "3.0.16",
+      "date": "2025-08-13",
+      "time": "05:15",
+      "description": "Comprehensive testing and VS Code integration complete",
+      "changes": [
+        "All new modules tested and verified in sandbox environment",
+        "ModelLoader functionality confirmed with help system",
+        "ComponentTester enhanced with 9 comprehensive tests",
+        "VS Code workspace setup tested and working",
+        "Main.py auto-creation tested and functional",
+        "All imports verified and working correctly",
+        "Unicode and timeout fixes confirmed working",
+        "Help system with 5 model files tested"
+      ],
+      "files_changed": [
+        "src/ai_action_handlers.py",
+        "src/ai_component_tester.py", 
+        "src/ai_process_manager.py",
+        "src/ai_app_launcher.py",
+        "src/ai_model_loader.py",
+        "check_versions.bat",
+        "run_ai_env.bat",
+        "setup_python_env.bat",
+        "version_config.json"
+      ]
+    }
+  ]
+}

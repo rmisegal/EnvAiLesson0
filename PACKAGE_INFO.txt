@@ -1,0 +1,151 @@
+================================================================
+                AI Environment Python System v3.0.22
+                        Package Information
+                   Created: 2025-08-13 14:30
+================================================================
+
+PACKAGE CONTENTS:
+================
+
+Root Files (8):
+- activate_ai_env.py          Main Python activation script
+- check_versions.bat          Windows version checker
+- run_ai_env.bat             Windows launcher script
+- setup_python_env.bat       Python environment setup script
+- README.md                  Complete documentation in English
+- version_config.json        Dynamic version configuration
+- PACKAGE_INFO.txt          This package information file
+- background_processes.json  Background process tracking
+
+Source Modules (18):
+- src/activate_ai_env.py      Main activation script
+- src/ai_action_handlers.py   Action handlers module
+- src/ai_app_launcher.py      Application launcher module
+- src/ai_component_setup.py   Component setup module
+- src/ai_component_tester.py  Comprehensive component testing (9 tests)
+- src/ai_conda_manager.py     Conda environment manager
+- src/ai_jupyter_manager.py   Jupyter Lab management system
+- src/ai_menu_system.py       Interactive menu system
+- src/ai_model_downloader.py  AI model downloader
+- src/ai_model_loader.py      AI model loader with help system
+- src/ai_model_manager.py     AI model management system
+- src/ai_ollama_manager.py    Ollama AI model manager
+- src/ai_path_manager.py      PATH environment manager
+- src/ai_process_manager.py   Background process manager
+- src/ai_status_display.py    Status display utilities
+- src/check_versions.py       Cross-platform Python version checker
+- src/verify_checksums.py    Checksum verification script
+
+Help Documentation (5):
+- help/phi_2_7b.txt          Phi 2.7B model help and examples
+- help/llama2_7b.txt         Llama2 7B model help and examples
+- help/mistral_7b.txt        Mistral 7B model help and examples
+- help/codellama_7b.txt      CodeLlama 7B model help and examples
+- help/gpt_oss_20b.txt       GPT-OSS 20B model help and examples
+
+Verification Files (1):
+- CHECKSUMS.sha256           SHA256 checksums for all files
+
+TOTAL FILES: 32 files
+
+PACKAGE VERIFICATION:
+====================
+
+To verify package integrity after extraction:
+
+1. Windows:
+   check_versions.bat
+   python src\verify_checksums.py
+
+2. Linux/Mac:
+   python3 src/check_versions.py
+   python3 src/verify_checksums.py
+
+Expected result:
+[SUCCESS] All files have correct versions (100%)
+[SUCCESS] All files verified successfully!
+
+INSTALLATION:
+=============
+
+1. Extract this ZIP directly to: D:\AI_Environment\
+2. Run launcher: run_ai_env.bat
+3. Check versions: check_versions.bat
+4. Start system: Select option from interactive menu
+
+FEATURES:
+=========
+
+- Cross-platform compatibility (Windows/Linux/Mac)
+- Dynamic version checking from JSON configuration
+- Comprehensive component testing (9 different tests)
+- Interactive menu system with 13 options including:
+  * QUIT (leave processes running)
+  * EXIT AND CLOSE ALL (stop all background processes)
+- Complete background process management with tracking
+- AI model management system with 6 sub-options
+- Jupyter Lab management with 6 server control options
+- 8 built-in development tools
+- Modular architecture for easy maintenance
+- Complete English documentatioNEW IN VERSION 3.0.22:
+======================
+
+🎯 Perfect Markdown Viewer:
+- All 9/9 formatting tests now pass perfectly
+- Fixed numbered list formatting with proper color codes
+- Enhanced test logic that works with or without colorama
+- Improved reliability across different environments
+
+📦 Enhanced Package Dependencies:
+- Added colorama for beautiful color formatting
+- Added psutil for enhanced process management
+- Updated install_config.json with all new packages
+
+🔧 Technical Improvements:
+- Fixed missing 're' import in component tester
+- Better error handling for missing packages
+- Improved fallback when colorama is unavailable
+- Enhanced documentation with complete version sync
+
+✅ Quality Assurance:
+- Perfect test coverage with 9/9 Markdown tests passing
+- Robust testing across different system configurations
+- Comprehensive package validation and reporting
+- Enhanced environment validation system
+
+VERSION INFORMATION:
+===================
+
+All files in this package are version 3.0.20 (2025-08-13)
+- Unified version numbering across all components
+- JSON-based version configuration
+- Automatic version verification
+- Enhanced background process tracking
+- Environment validation system
+- Fixed color schemes and terminal launcher
+
+CHECKSUM VERIFICATION:
+=====================
+
+This package includes SHA256 checksums for all files to ensure:
+- Complete file extraction
+- File integrity (no corruption)
+- No missing files
+- No unexpected files
+
+Run 'check_versions.bat' after extraction to verify.
+
+BACKGROUND PROCESS MANAGEMENT:
+=============================
+
+The system now includes comprehensive background process tracking:
+- Automatic tracking of Ollama server processes
+- Automatic tracking of Jupyter Lab server processes
+- Automatic tracking of VS Code instances
+- Process cleanup on exit with EXIT_AND_CLOSE option
+- Real-time process status monitoring
+
+================================================================
+AI Environment Python System v3.0.21 - Advanced AI Development Environment
+================================================================
+
