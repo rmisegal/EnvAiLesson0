@@ -16,6 +16,8 @@ import re
 from pathlib import Path
 from datetime import datetime
 
+from version_utils import print_footer, set_last_status
+
 # Version information
 SCRIPT_VERSION = "3.0.0"
 SCRIPT_DATE = "2025-08-12"
@@ -186,27 +188,6 @@ def print_summary(stats):
         print(f"{Colors.CYAN}[SOLUTION] Update files as needed or download latest package{Colors.RESET}")
         return False
 
-def print_footer(success):
-    """Print the footer information"""
-    print()
-    print("================================================================")
-    print("                   JSON CONFIGURATION INFO")
-    print("================================================================")
-    print()
-    print(f"[INFO] Configuration file: version_config.json")
-    print(f"[INFO] Script version: {SCRIPT_VERSION}")
-    print(f"[INFO] To view detailed version requirements:")
-    if os.name == 'nt':  # Windows
-        print("  type version_config.json")
-    else:  # Unix/Linux/Mac
-        print("  cat version_config.json")
-    print()
-    print(f"[INFO] To update expected versions:")
-    print("  Edit version_config.json with your preferred text editor")
-    print()
-    print("================================================================")
-    print("                   VERSION CHECK COMPLETE")
-    print("================================================================")
 
 def main():
     """Main function"""
@@ -245,10 +226,11 @@ def main():
     
     # Print summary
     success = print_summary(stats)
-    
-    # Print footer
-    print_footer(success)
-    
+
+    # Print footer based on final status
+    set_last_status(success)
+    print_footer(SCRIPT_VERSION)
+
     # Exit with appropriate code
     sys.exit(0 if success else 1)
 

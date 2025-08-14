@@ -56,6 +56,8 @@ def get_highest_version_from_config():
 SCRIPT_VERSION = get_highest_version_from_config()
 SCRIPT_DATE = "2025-08-12"
 
+final_status = None
+
 def check_launch_method():
     """Check if script is being run directly and show guidance"""
     # Check if we're being called from a batch file or directly
@@ -307,7 +309,7 @@ def print_summary(stats):
         print(f"{Colors.CYAN}[SOLUTION] Update files as needed or download latest package{Colors.RESET}")
         return False
 
-def print_footer(success, config=None):
+def print_footer(config=None):
     """Print the footer information"""
     print()
     print("================================================================")
@@ -315,7 +317,7 @@ def print_footer(success, config=None):
     print("================================================================")
     print()
     print(f"[INFO] Configuration file: version_config.json")
-    
+
     # Get and display the highest version from configuration
     highest_version = get_highest_version_from_config(config)
     print(f"[INFO] Highest system version: {highest_version}")
@@ -330,7 +332,12 @@ def print_footer(success, config=None):
     print("  Edit version_config.json with your preferred text editor")
     print()
     print("================================================================")
-    print("                   VERSION CHECK COMPLETE")
+    if final_status is True:
+        print("                   VERSION CHECK SUCCESSFUL")
+    elif final_status is False:
+        print("               VERSION CHECK COMPLETED WITH ISSUES")
+    else:
+        print("                   VERSION CHECK COMPLETE")
     print("================================================================")
 
 def main():
@@ -370,10 +377,14 @@ def main():
     
     # Print summary
     success = print_summary(stats)
-    
+
+    # Store final status for footer
+    global final_status
+    final_status = success
+
     # Print footer
-    print_footer(success, config)
-    
+    print_footer(config)
+
     # Exit with appropriate code
     sys.exit(0 if success else 1)
 
