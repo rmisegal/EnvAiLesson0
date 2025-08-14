@@ -150,7 +150,7 @@ AI_Environment/
 │   ├── codellama_7b.txt       # CodeLlama 7B model help
 │   └── gpt_oss_20b.txt        # GPT-OSS 20B model help
 └── src/                        # Separate modules
-    ├── ai_component_tester.py  # Component testing
+    ├── ai_component_tester/core.py  # Component testing
     ├── ai_menu_system.py       # Menu system
     ├── ai_action_handlers.py   # Action handlers
     ├── ai_path_manager.py      # Path management
@@ -234,6 +234,15 @@ The system tests:
 - ✅ **AI model management** - Model system functionality
 - ✅ **Jupyter Lab system** - Server management functionality
 - ✅ **Help documentation** - Model help files availability
+
+### Custom Environment Path
+
+```bash
+python -m ai_component_tester.core /path/to/AI_Environment
+# or
+AI_ENV_PATH=/path/to/AI_Environment python -m ai_component_tester.core
+```
+
 
 ## 📊 **Sample Output:**
 
