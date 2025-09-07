@@ -22,7 +22,7 @@ Source Modules (18):
 - src/ai_action_handlers.py   Action handlers module
 - src/ai_app_launcher.py      Application launcher module
 - src/ai_component_setup.py   Component setup module
-- src/ai_component_tester.py  Comprehensive component testing (9 tests)
+- src/ai_component_tester/core.py  Comprehensive component testing (9 tests)
 - src/ai_conda_manager.py     Conda environment manager
 - src/ai_jupyter_manager.py   Jupyter Lab management system
 - src/ai_menu_system.py       Interactive menu system

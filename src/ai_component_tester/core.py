@@ -709,19 +709,25 @@ class ComponentTester:
             print(f"\n{Fore.RED}❌ SIGNIFICANT ISSUES: {failed_tests} test(s) failed. Please check the installation.{Style.RESET_ALL}")
             return False
 
-def main():
-    """Test component tester"""
-    ai_env_path = Path("D:/AI_Environment")
+def main(path=None):
+    """Run component tests.
+
+    Args:
+        path (str or Path, optional): Path to the AI Environment directory.
+            If not provided, the function uses the AI_ENV_PATH environment
+            variable or defaults to 'D:/AI_Environment'.
+    """
+    ai_env_path = Path(path or os.environ.get("AI_ENV_PATH", "D:/AI_Environment"))
     conda_path = ai_env_path / "Miniconda"
-    
+
     tester = ComponentTester(ai_env_path, conda_path)
     success = tester.run_all_tests()
-    
+
     if success:
         print(f"\n{Fore.GREEN}Component testing completed successfully{Style.RESET_ALL}")
     else:
         print(f"\n{Fore.RED}Component testing found issues{Style.RESET_ALL}")
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else None)
 
